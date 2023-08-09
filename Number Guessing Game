@@ -1,0 +1,23 @@
+import random
+max_score=100
+max_scorer=""
+
+while True:
+  print("Top score: %d by %s" % (max_score,max_scorer))
+  name = input("what’s your name?")
+  print("hello %s" % name)
+  answer = random.randint(1,100)
+  guess=0
+  n_guesses=0
+  print("You are now playing the number guessing game v.1.4 whats your guess?")
+  while (guess != answer):
+    n_guesses=n_guesses+1
+    guess = int(input("enter your guess num. %d: " % n_guesses))
+    if guess == answer:
+      print("Congratulations!")
+      break
+    elif guess < answer:print("Too low.")
+    elif guess > answer:print("Too high.")
+  if (n_guesses<max_score):
+  	max_score=n_guesses
+  	max_scorer=name
